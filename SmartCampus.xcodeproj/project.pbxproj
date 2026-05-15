@@ -7,49 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F1A1A1A1A1A1A1A1A1A1A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1B1B1B1B1B1B1B1B1B1 /* AppDelegate.swift */; };
-		F1A2A2A2A2A2A2A2A2A2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2B2B2B2B2B2B2B2B2B2 /* SceneDelegate.swift */; };
+		1A1A1A1A1A1A1A1A1A1A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */; };
+		1A2A2A2A2A2A2A2A2A2A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B2B2B2B2B2B2B2B2B2B /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F1C1C1C1C1C1C1C1C1C1C1 /* SmartCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1B1B1B1B1B1B1B1B1B1B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1B2B2B2B2B2B2B2B2B2B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1D1D1D1D1D1D1D1D1D1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B1B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B2B2B2B2B2B2B2B2B2B2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1D1D1D1D1D1D1D1D1D1D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		F1E1E1E1E1E1E1E1E1E1E1 = {
+		1E1E1E1E1E1E1E1E1E1E1E = {
 			isa = PBXGroup;
 			children = (
-				F1F1F1F1F1F1F1F1F1F1F1 /* SmartCampus */,
-				F1G1G1G1G1G1G1G1G1G1G1 /* Products */,
+				1F1F1F1F1F1F1F1F1F1F1F /* SmartCampus */,
+				1G1G1G1G1G1G1G1G1G1G1G /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F1F1F1F1F1F1F1F1F1F1F1 /* SmartCampus */ = {
-			isa = PBXGroup;
-			path = SmartCampus;
-			sourceTree = SOURCE_ROOT;
-		};
-		F1G1G1G1G1G1G1G1G1G1G1 /* Products */ = {
+		1F1F1F1F1F1F1F1F1F1F1F /* SmartCampus */ = {
 			isa = PBXGroup;
 			children = (
-				F1C1C1C1C1C1C1C1C1C1C1 /* SmartCampus.app */,
+				1B1B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */,
+				1B2B2B2B2B2B2B2B2B2B2B /* SceneDelegate.swift */,
+				1D1D1D1D1D1D1D1D1D1D1D /* Info.plist */,
+				1H1H1H1H1H1H1H1H1H1H1H /* Models */,
+				1I1I1I1I1I1I1I1I1I1I1I /* Services */,
+				1J1J1J1J1J1J1J1J1J1J1J /* ViewControllers */,
+			);
+			path = SmartCampus;
+			sourceTree = "<group>";
+		};
+		1G1G1G1G1G1G1G1G1G1G1G /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1H1H1H1H1H1H1H1H1H1H1H /* Models */ = {
+			isa = PBXGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1I1I1I1I1I1I1I1I1I1I1I /* Services */ = {
+			isa = PBXGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1J1J1J1J1J1J1J1J1J1J1J /* ViewControllers */ = {
+			isa = PBXGroup;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXProject section */
-		F1H1H1H1H1H1H1H1H1H1H1 /* Project object */ = {
+		1K1K1K1K1K1K1K1K1K1K1K /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 			};
-			buildConfigurationList = F1I1I1I1I1I1I1I1I1I1I1 /* Build configuration list for PBXProject "SmartCampus" */;
+			buildConfigurationList = 1L1L1L1L1L1L1L1L1L1L1L /* Build configuration list for PBXProject "SmartCampus" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -57,22 +80,22 @@
 				en,
 				Base,
 			);
-			mainGroup = F1E1E1E1E1E1E1E1E1E1E1;
-			productRefGroup = F1G1G1G1G1G1G1G1G1G1G1 /* Products */;
+			mainGroup = 1E1E1E1E1E1E1E1E1E1E1E;
+			productRefGroup = 1G1G1G1G1G1G1G1G1G1G1G /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1J1J1J1J1J1J1J1J1J1J1 /* SmartCampus */,
+				1M1M1M1M1M1M1M1M1M1M1M /* SmartCampus */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXNativeTarget section */
-		F1J1J1J1J1J1J1J1J1J1J1 /* SmartCampus */ = {
+		1M1M1M1M1M1M1M1M1M1M1M /* SmartCampus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1K1K1K1K1K1K1K1K1K1K1 /* Build configuration list for PBXNativeTarget "SmartCampus" */;
+			buildConfigurationList = 1N1N1N1N1N1N1N1N1N1N1N /* Build configuration list for PBXNativeTarget "SmartCampus" */;
 			buildPhases = (
-				F1L1L1L1L1L1L1L1L1L1L1 /* Sources */,
+				1O1O1O1O1O1O1O1O1O1O1O /* Sources */,
 			);
 			buildRules = (
 			);
@@ -80,29 +103,30 @@
 			);
 			name = SmartCampus;
 			productName = SmartCampus;
-			productReference = F1C1C1C1C1C1C1C1C1C1C1 /* SmartCampus.app */;
+			productReference = 1C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F1L1L1L1L1L1L1L1L1L1L1 /* Sources */ = {
+		1O1O1O1O1O1O1O1O1O1O1O /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1A1A1A1A1A1A1A1A1A1A1 /* AppDelegate.swift in Sources */,
-				F1A2A2A2A2A2A2A2A2A2A2 /* SceneDelegate.swift in Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A /* AppDelegate.swift in Sources */,
+				1A2A2A2A2A2A2A2A2A2A2A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F1M1M1M1M1M1M1M1M1M1M1 /* Debug */ = {
+		1P1P1P1P1P1P1P1P1P1P1P /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				CODE_SIGNING_ALLOWED = NO;
+				PRODUCT_NAME = SmartCampus;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartcampus.app;
 				SWIFT_VERSION = 5.0;
 				INFOPLIST_FILE = SmartCampus/Info.plist;
@@ -110,11 +134,12 @@
 			};
 			name = Debug;
 		};
-		F1N1N1N1N1N1N1N1N1N1N1 /* Release */ = {
+		1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				CODE_SIGNING_ALLOWED = NO;
+				PRODUCT_NAME = SmartCampus;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartcampus.app;
 				SWIFT_VERSION = 5.0;
 				INFOPLIST_FILE = SmartCampus/Info.plist;
@@ -125,25 +150,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F1I1I1I1I1I1I1I1I1I1I1 /* Build configuration list for PBXProject "SmartCampus" */ = {
+		1L1L1L1L1L1L1L1L1L1L1L /* Build configuration list for PBXProject "SmartCampus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F1M1M1M1M1M1M1M1M1M1M1 /* Debug */,
-				F1N1N1N1N1N1N1N1N1N1N1 /* Release */,
+				1P1P1P1P1P1P1P1P1P1P1P /* Debug */,
+				1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1K1K1K1K1K1K1K1K1K1K1 /* Build configuration list for PBXNativeTarget "SmartCampus" */ = {
+		1N1N1N1N1N1N1N1N1N1N1N /* Build configuration list for PBXNativeTarget "SmartCampus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F1M1M1M1M1M1M1M1M1M1M1 /* Debug */,
-				F1N1N1N1N1N1N1N1N1N1N1 /* Release */,
+				1P1P1P1P1P1P1P1P1P1P1P /* Debug */,
+				1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F1H1H1H1H1H1H1H1H1H1H1 /* Project object */;
+	rootObject = 1K1K1K1K1K1K1K1K1K1K1K /* Project object */;
 }
