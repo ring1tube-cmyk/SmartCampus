@@ -14,39 +14,32 @@ jobs:
       
       - name: Create Info.plist
         run: |
-          cat > SmartCampus/Info.plist << 'EOF2'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>CFBundleIdentifier</key>
-    <string>com.smartcampus.app</string>
-    <key>CFBundleName</key>
-    <string>SmartCampus</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
-    <key>CFBundleVersion</key>
-    <string>1</string>
-    <key>LSRequiresIPhoneOS</key>
-    <true/>
-</dict>
-</plist>
-EOF2
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>CFBundleIdentifier</key>
+              <string>com.smartcampus.app</string>
+              <key>CFBundleName</key>
+              <string>SmartCampus</string>
+              <key>CFBundlePackageType</key>
+              <string>APPL</string>
+              <key>CFBundleShortVersionString</key>
+              <string>1.0</string>
+              <key>CFBundleVersion</key>
+              <string>1</string>
+              <key>LSRequiresIPhoneOS</key>
+              <true/>
+          </dict>
+          </plist>' > SmartCampus/Info.plist
       
       - name: List Swift files
         run: |
-          echo "=== Swift Files ==="
+          echo "Swift file count:"
           find SmartCampus -name "*.swift" | wc -l
-          find SmartCampus -name "*.swift" | head -10
       
-      - name: Simple build test
-        run: |
-          echo "Build test completed successfully"
-      
-      - name: Upload source info
+      - name: Upload source code
         uses: actions/upload-artifact@v4
         with:
-          name: source-info
+          name: SmartCampus-Source
           path: SmartCampus/
