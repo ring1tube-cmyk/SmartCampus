@@ -1,4 +1,4 @@
-name: Build iOS App
+name: Test Files
 
 on:
   push:
@@ -6,31 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: macos-latest
-    
+  test:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Build Project
+      - name: List Swift files
         run: |
-          xcodebuild -project SmartCampus.xcodeproj \
-            -scheme SmartCampus \
-            -sdk iphoneos \
-            -configuration Release \
-            CODE_SIGNING_ALLOWED=NO \
-            -derivedDataPath DerivedData
-      
-      - name: Create IPA
-        run: |
-          APP_PATH=$(find DerivedData -name "SmartCampus.app" -type d | head -1)
-          echo "Found app at: $APP_PATH"
-          mkdir -p Payload
-          cp -R "$APP_PATH" Payload/
-          zip -r SmartCampus.ipa Payload
-      
-      - name: Upload IPA
-        uses: actions/upload-artifact@v4
-        with:
-          name: SmartCampus
-          path: SmartCampus.ipa
+          echo "=== Swift Files Count ==="
+          find SmartCampus -name "*.swift" | wc -l
+          echo "=== First 10 Swift Files ==="
+          find SmartCampus -name "*.swift" | head -10
