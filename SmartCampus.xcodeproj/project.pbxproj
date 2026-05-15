@@ -7,72 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A1A1A1A1A1A1A1A1A1A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */; };
-		1A2A2A2A2A2A2A2A2A2A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B2B2B2B2B2B2B2B2B2B /* SceneDelegate.swift */; };
+		F11A1A1A1A1A1A1A1A1A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */; };
+		F11A2A2A2A2A2A2A2A2A2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B2B2B2B2B2B2B2B2B2B /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B1B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B2B2B2B2B2B2B2B2B2B2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1D1D1D1D1D1D1D1D1D1D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F11C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F11B2B2B2B2B2B2B2B2B2B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		1E1E1E1E1E1E1E1E1E1E1E = {
+		F11E1E1E1E1E1E1E1E1E1E1E = {
 			isa = PBXGroup;
 			children = (
-				1F1F1F1F1F1F1F1F1F1F1F /* SmartCampus */,
-				1G1G1G1G1G1G1G1G1G1G1G /* Products */,
+				F11F1F1F1F1F1F1F1F1F1F1F /* SmartCampus */,
+				F11G1G1G1G1G1G1G1G1G1G1G /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1F1F1F1F1F1F1F1F1F1F1F /* SmartCampus */ = {
+		F11F1F1F1F1F1F1F1F1F1F1F /* SmartCampus */ = {
 			isa = PBXGroup;
-			children = (
-				1B1B1B1B1B1B1B1B1B1B1B /* AppDelegate.swift */,
-				1B2B2B2B2B2B2B2B2B2B2B /* SceneDelegate.swift */,
-				1D1D1D1D1D1D1D1D1D1D1D /* Info.plist */,
-				1H1H1H1H1H1H1H1H1H1H1H /* Models */,
-				1I1I1I1I1I1I1I1I1I1I1I /* Services */,
-				1J1J1J1J1J1J1J1J1J1J1J /* ViewControllers */,
-			);
 			path = SmartCampus;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
-		1G1G1G1G1G1G1G1G1G1G1G /* Products */ = {
+		F11G1G1G1G1G1G1G1G1G1G1G /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */,
+				F11C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		1H1H1H1H1H1H1H1H1H1H1H /* Models */ = {
-			isa = PBXGroup;
-			path = Models;
-			sourceTree = "<group>";
-		};
-		1I1I1I1I1I1I1I1I1I1I1I /* Services */ = {
-			isa = PBXGroup;
-			path = Services;
-			sourceTree = "<group>";
-		};
-		1J1J1J1J1J1J1J1J1J1J1J /* ViewControllers */ = {
-			isa = PBXGroup;
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXProject section */
-		1K1K1K1K1K1K1K1K1K1K1K /* Project object */ = {
+		F11H1H1H1H1H1H1H1H1H1H1H /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 			};
-			buildConfigurationList = 1L1L1L1L1L1L1L1L1L1L1L /* Build configuration list for PBXProject "SmartCampus" */;
+			buildConfigurationList = F11I1I1I1I1I1I1I1I1I1I1I /* Build configuration list for PBXProject "SmartCampus" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -80,22 +56,22 @@
 				en,
 				Base,
 			);
-			mainGroup = 1E1E1E1E1E1E1E1E1E1E1E;
-			productRefGroup = 1G1G1G1G1G1G1G1G1G1G1G /* Products */;
+			mainGroup = F11E1E1E1E1E1E1E1E1E1E1E;
+			productRefGroup = F11G1G1G1G1G1G1G1G1G1G1G /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1M1M1M1M1M1M1M1M1M1M1M /* SmartCampus */,
+				F11J1J1J1J1J1J1J1J1J1J1J /* SmartCampus */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXNativeTarget section */
-		1M1M1M1M1M1M1M1M1M1M1M /* SmartCampus */ = {
+		F11J1J1J1J1J1J1J1J1J1J1J /* SmartCampus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1N1N1N1N1N1N1N1N1N1N1N /* Build configuration list for PBXNativeTarget "SmartCampus" */;
+			buildConfigurationList = F11K1K1K1K1K1K1K1K1K1K1K /* Build configuration list for PBXNativeTarget "SmartCampus" */;
 			buildPhases = (
-				1O1O1O1O1O1O1O1O1O1O1O /* Sources */,
+				F11L1L1L1L1L1L1L1L1L1L1L /* Sources */,
 			);
 			buildRules = (
 			);
@@ -103,25 +79,25 @@
 			);
 			name = SmartCampus;
 			productName = SmartCampus;
-			productReference = 1C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */;
+			productReference = F11C1C1C1C1C1C1C1C1C1C1C /* SmartCampus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1O1O1O1O1O1O1O1O1O1O1O /* Sources */ = {
+		F11L1L1L1L1L1L1L1L1L1L1L /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A1A1A1A1A1A1A1A1A1A1A /* AppDelegate.swift in Sources */,
-				1A2A2A2A2A2A2A2A2A2A2A /* SceneDelegate.swift in Sources */,
+				F11A1A1A1A1A1A1A1A1A1A1 /* AppDelegate.swift in Sources */,
+				F11A2A2A2A2A2A2A2A2A2A2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1P1P1P1P1P1P1P1P1P1P1P /* Debug */ = {
+		F11M1M1M1M1M1M1M1M1M1M1M /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
@@ -130,11 +106,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartcampus.app;
 				SWIFT_VERSION = 5.0;
 				INFOPLIST_FILE = SmartCampus/Info.plist;
-				DEVELOPMENT_TEAM = "";
 			};
 			name = Debug;
 		};
-		1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q /* Release */ = {
+		F11N1N1N1N1N1N1N1N1N1N1N /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
@@ -143,32 +118,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartcampus.app;
 				SWIFT_VERSION = 5.0;
 				INFOPLIST_FILE = SmartCampus/Info.plist;
-				DEVELOPMENT_TEAM = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1L1L1L1L1L1L1L1L1L1L1L /* Build configuration list for PBXProject "SmartCampus" */ = {
+		F11I1I1I1I1I1I1I1I1I1I1I /* Build configuration list for PBXProject "SmartCampus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1P1P1P1P1P1P1P1P1P1P1P /* Debug */,
-				1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q /* Release */,
+				F11M1M1M1M1M1M1M1M1M1M1M /* Debug */,
+				F11N1N1N1N1N1N1N1N1N1N1N /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1N1N1N1N1N1N1N1N1N1N1N /* Build configuration list for PBXNativeTarget "SmartCampus" */ = {
+		F11K1K1K1K1K1K1K1K1K1K1K /* Build configuration list for PBXNativeTarget "SmartCampus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1P1P1P1P1P1P1P1P1P1P1P /* Debug */,
-				1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q1Q /* Release */,
+				F11M1M1M1M1M1M1M1M1M1M1M /* Debug */,
+				F11N1N1N1N1N1N1N1N1N1N1N /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1K1K1K1K1K1K1K1K1K1K1K /* Project object */;
+	rootObject = F11H1H1H1H1H1H1H1H1H1H1H /* Project object */;
 }
