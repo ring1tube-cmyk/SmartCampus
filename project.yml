@@ -1,0 +1,26 @@
+name: SmartCampus
+options:
+  bundleIdPrefix: com.smartcampus
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  SmartCampus:
+    type: application
+    platform: iOS
+    sources:
+      - path: SmartCampus
+        name: SmartCampus
+    info:
+      path: SmartCampus/Info.plist
+      properties:
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleName: SmartCampus
+        CFBundlePackageType: APPL
+        CFBundleShortVersionString: 1.0
+        CFBundleVersion: 1
+        LSRequiresIPhoneOS: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.smartcampus.app
+        CODE_SIGNING_ALLOWED: NO
+        SWIFT_VERSION: 5.0
