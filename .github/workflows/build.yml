@@ -1,0 +1,37 @@
+name: Build iOS App
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+      
+      - name: Build Project
+        run: |
+          xcodebuild clean build \
+            -project SmartCampus.xcodeproj \
+            -scheme SmartCampus \
+            -sdk iphoneos \
+            -configuration Release \
+            CODE_SIGNING_ALLOWED=NO
+      
+      - name: Create IPA
+        run: |
+          mkdir -p Payload
+          cp -r build/Release-iphoneos/SmartCampus.app Payload/
+          zip -r SmartCampus.ipa Payload
+      
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartCampus
+          path: SmartCampus.ipa
