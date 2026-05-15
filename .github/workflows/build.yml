@@ -1,4 +1,4 @@
-name: Test Files
+name: Build iOS App
 
 on:
   push:
@@ -6,13 +6,53 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: macos-latest
+    
     steps:
       - uses: actions/checkout@v4
-      - name: List Swift files
+      
+      - name: Create Info.plist
         run: |
-          echo "=== Swift Files Count ==="
-          find SmartCampus -name "*.swift" | wc -l
-          echo "=== First 10 Swift Files ==="
-          find SmartCampus -name "*.swift" | head -10
+          cat > SmartCampus/Info.plist << 'INFO'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.smartcampus.app</string>
+    <key>CFBundleName</key>
+    <string>SmartCampus</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+</dict>
+</plist>
+INFO
+      
+      - name: Create temporary Xcode project
+        run: |
+          # Create a minimal SwiftPM project that includes all your files
+          mkdir -p TempProject/Sources/TempProject
+          cp -r SmartCampus/* TempProject/Sources/TempProject/
+          cd TempProject
+          swift package init --name SmartCampus --type executable
+          # Replace main.swift with your AppDelegate (adjust for iOS)
+          cd ..
+      
+      - name: Build with SwiftPM
+        run: |
+          cd TempProject
+          swift build -c release
+          echo "Build completed"
+      
+      - name: Upload build products
+        uses: actions/upload-artifact@v4
+        with:
+          name: BuildOutput
+          path: TempProject/.build/release/
