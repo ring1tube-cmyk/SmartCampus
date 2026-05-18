@@ -8,10 +8,31 @@ on:
 jobs:
   build:
     runs-on: macos-latest
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Create Info.plist
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>CFBundleIdentifier</key>
+              <string>com.smartcampus.app</string>
+              <key>CFBundleName</key>
+              <string>SmartCampus</string>
+              <key>CFBundlePackageType</key>
+              <string>APPL</string>
+              <key>CFBundleShortVersionString</key>
+              <string>1.0</string>
+              <key>CFBundleVersion</key>
+              <string>1</string>
+              <key>LSRequiresIPhoneOS</key>
+              <true/>
+          </dict>
+          </plist>' > SmartCampus/Info.plist
+
       - name: Build with xcodebuild
         run: |
           xcodebuild -project SmartCampus.xcodeproj \
@@ -20,7 +41,12 @@ jobs:
             -configuration Release \
             CODE_SIGNING_ALLOWED=NO \
             -derivedDataPath DerivedData
-      
+
+      - name: List Swift files
+        run: |
+          echo "Swift file count:"
+          find SmartCampus -name "*.swift" | wc -l
+
       - name: Create IPA
         run: |
           APP_PATH=$(find DerivedData -name "SmartCampus.app" -type d | head -1)
@@ -33,7 +59,7 @@ jobs:
             echo "ERROR: No .app file found"
             exit 1
           fi
-      
+
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
