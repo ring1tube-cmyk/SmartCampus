@@ -20,7 +20,7 @@ jobs:
       - name: Build iOS Workspace
         run: |
           xcodebuild -workspace ios/App/App.xcworkspace \
-                     -scheme App \
+                     -scheme SmartCampus \
                      -sdk iphonesimulator \
                      -configuration Debug \
                      clean build \
