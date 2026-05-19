@@ -1,1 +1,1 @@
-{"name": "smartcampus", "dependencies": {"@capacitor/core": "^6.0.0", "@capacitor/ios": "^6.0.0"}, "devDependencies": {"@capacitor/cli": "^6.0.0"}}
+{"name":"smartcampus","dependencies":{"@capacitor/core":"^6.0.0","@capacitor/ios":"^6.2.1"},"devDependencies":{"@capacitor/cli":"^6.0.0","@capawesome/cli":"^4.10.0"}}
