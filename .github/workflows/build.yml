@@ -12,33 +12,34 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Build iOS App (No Pods)
+      - name: Install CocoaPods
         run: |
-          # Use xcodebuild directly without pod install
-          xcodebuild -project SmartCampus.xcodeproj \
+          sudo gem install cocoapods
+          cd ios/App
+          pod install
+          cd ../..
+      
+      - name: Build with Xcode
+        run: |
+          cd ios/App
+          xcodebuild -workspace App.xcworkspace \
             -scheme App \
             -sdk iphoneos \
             -configuration Release \
             CODE_SIGNING_ALLOWED=NO \
-            -derivedDataPath DerivedData \
-            SKIP_INSTALL=NO \
-            ONLY_ACTIVE_ARCH=NO \
-            VALID_ARCHS="arm64 armv7"
-          
-      - name: Find and Create IPA
+            -derivedDataPath DerivedData
+          cd ../..
+      
+      - name: Package IPA
         run: |
-          echo "Searching for .app file..."
-          find DerivedData -name "*.app" -type d
-          
-          APP_PATH=$(find DerivedData -name "*.app" -type d | head -1)
-          if [ -n "$APP_PATH" ] && [ -d "$APP_PATH" ]; then
-            echo "Found app at: $APP_PATH"
+          APP_PATH=$(find ios/App/DerivedData -name "App.app" -type d | head -1)
+          if [ -n "$APP_PATH" ]; then
             mkdir -p Payload
             cp -R "$APP_PATH" Payload/
             zip -r SmartCampus.ipa Payload
-            echo "IPA created: $(ls -la SmartCampus.ipa)"
+            echo "✅ IPA created!"
           else
-            echo "ERROR: No .app file found"
+            echo "❌ App not found"
             exit 1
           fi
       
