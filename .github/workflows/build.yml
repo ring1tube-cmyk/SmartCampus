@@ -36,7 +36,8 @@ jobs:
                      -configuration Debug \
                      clean build \
                      CODE_SIGNING_ALLOWED=NO
-                     - name: Upload Build Artifact
+
+      - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: SmartCampus-Simulator-App
