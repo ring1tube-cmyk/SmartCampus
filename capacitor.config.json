@@ -1,5 +1,1 @@
-{
-  "appId": "com.smartcampus.app",
-  "appName": "SmartCampus",
-  "webDir": "SmartCampus"
-}
+{"appId": "com.smartcampus.app", "appName": "SmartCampus", "webDir": "www"}
