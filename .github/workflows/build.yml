@@ -18,25 +18,39 @@ jobs:
           ls -la
           echo "=== ios/App directory ==="
           ls -la ios/App/
-          echo "=== Looking for Podfile ==="
-          find . -name "Podfile"
+          echo "=== Looking for .xcodeproj ==="
+          find . -name "*.xcodeproj" -type d
+          echo "=== Looking for .xcworkspace ==="
+          find . -name "*.xcworkspace" -type d
       
       - name: Install CocoaPods
         run: |
           sudo gem install cocoapods
           cd ios/App
           pod install --verbose
-          ls -la
           cd ../..
       
       - name: Build iOS App
         run: |
-          xcodebuild -workspace ios/App/App.xcworkspace \
-            -scheme App \
-            -sdk iphoneos \
-            -configuration Release \
-            CODE_SIGNING_ALLOWED=NO \
-            -derivedDataPath DerivedData
+          # Try workspace first, fall back to project
+          if [ -d "ios/App/App.xcworkspace" ]; then
+            xcodebuild -workspace ios/App/App.xcworkspace \
+              -scheme App \
+              -sdk iphoneos \
+              -configuration Release \
+              CODE_SIGNING_ALLOWED=NO \
+              -derivedDataPath DerivedData
+          elif [ -d "SmartCampus.xcodeproj" ]; then
+            xcodebuild -project SmartCampus.xcodeproj \
+              -scheme App \
+              -sdk iphoneos \
+              -configuration Release \
+              CODE_SIGNING_ALLOWED=NO \
+              -derivedDataPath DerivedData
+          else
+            echo "No project or workspace found!"
+            exit 1
+          fi
       
       - name: Create IPA
         run: |
@@ -47,7 +61,7 @@ jobs:
             zip -r SmartCampus.ipa Payload
             echo "IPA created successfully!"
           else
-            echo "No .app found, checking build folder..."
+            echo "No .app found"
             find DerivedData -name "*.app" -type d
             exit 1
           fi
