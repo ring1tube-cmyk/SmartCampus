@@ -8,58 +8,31 @@ on:
 jobs:
   build:
     runs-on: macos-latest
-
+    
     steps:
       - uses: actions/checkout@v4
-
-      - name: Create Info.plist
+      
+      - name: Install CocoaPods
         run: |
-          echo '<?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
-              <key>CFBundleIdentifier</key>
-              <string>com.smartcampus.app</string>
-              <key>CFBundleName</key>
-              <string>SmartCampus</string>
-              <key>CFBundlePackageType</key>
-              <string>APPL</string>
-              <key>CFBundleShortVersionString</key>
-              <string>1.0</string>
-              <key>CFBundleVersion</key>
-              <string>1</string>
-              <key>LSRequiresIPhoneOS</key>
-              <true/>
-          </dict>
-          </plist>' > SmartCampus/Info.plist
-
-      - name: Build with xcodebuild
+          cd ios/App
+          pod install
+      
+      - name: Build iOS App
         run: |
           xcodebuild -project SmartCampus.xcodeproj \
-            -scheme SmartCampus \
+            -scheme App \
             -sdk iphoneos \
             -configuration Release \
             CODE_SIGNING_ALLOWED=NO \
             -derivedDataPath DerivedData
-
-      - name: List Swift files
-        run: |
-          echo "Swift file count:"
-          find SmartCampus -name "*.swift" | wc -l
-
+      
       - name: Create IPA
         run: |
-          APP_PATH=$(find DerivedData -name "SmartCampus.app" -type d | head -1)
-          if [ -n "$APP_PATH" ] && [ -d "$APP_PATH" ]; then
-            mkdir -p Payload
-            cp -R "$APP_PATH" Payload/
-            zip -r SmartCampus.ipa Payload
-            echo "IPA created successfully!"
-          else
-            echo "ERROR: No .app file found"
-            exit 1
-          fi
-
+          APP_PATH=$(find DerivedData -name "*.app" -type d | head -1)
+          mkdir -p Payload
+          cp -R "$APP_PATH" Payload/
+          zip -r SmartCampus.ipa Payload
+      
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
